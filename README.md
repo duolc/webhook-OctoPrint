@@ -17,6 +17,6 @@ event:
  enabled: True
  subscriptions:
   - event: PrintDone
-    command: node ~/myScripts/finished.js
+    command: node ~/{{Script Location}}/finished.js
     type: system
 
