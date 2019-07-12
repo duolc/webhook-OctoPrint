@@ -3,9 +3,12 @@
 var request = require('request')
 
 var iftttKey = '/with/key/'+'{{Your IFTTT API key}}';
-
 var iftttLink = 'https://maker.ifttt.com/trigger/';
 
+//Shutdown Calculation (Allow time for cooling of hotend and heatbreak)
+
+var cooldownDelay = ;//Time in Minutes you want to wait for power cut
+var shutdownTime = cooldownDelay * 60000;
 
 function finishAlert() {
         request.post(iftttLink+'printDone'+iftttKey);
@@ -18,5 +21,4 @@ function shutdownPrinter() {
 //Execute
 
 finishAlert();
-//Shutdown after 10 Min (Allows for cooling of hotend and heatbreak)
-setTimeout(shutdownPrinter, 600000);
+setTimeout(shutdownPrinter, shutdownTime);
