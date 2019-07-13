@@ -13,10 +13,9 @@ Add your ifttt API key to line 5
 
 Add the following to the end of your config.yaml located at /home/pi/.octoprint
 
-event:
+events:
  enabled: True
  subscriptions:
   - event: PrintDone
     command: node ~/{{Script Location}}/finished.js
     type: system
-
